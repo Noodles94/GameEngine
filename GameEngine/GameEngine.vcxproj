@@ -150,10 +150,14 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="MainCharacter.cpp" />
+    <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
     <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="MainCharacter.h" />
+    <ClInclude Include="System.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\Cobblestone.bmp" />
