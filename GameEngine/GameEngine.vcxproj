@@ -147,7 +147,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameLoop.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="GameLoop.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\Cobblestone.bmp" />
+    <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrass.bmp" />
+    <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrassAndTwigs.bmp" />
+    <Image Include="..\..\..\..\..\Downloads\ManInWheelchair.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
