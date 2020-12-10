@@ -9,8 +9,8 @@ namespace engine {
 	public:
 		//Fabric function which returns an object created on the stack
 		//virtual Component* getInstance(int x, int y, int w, int h, const char* pathToTexture) = 0;
-		virtual void spacebarEvent(const SDL_Event &event) = 0;
-		void draw() const;
+		virtual void spacebarEvent(const SDL_Event &event);
+		virtual void draw() const;
 		virtual void tick()= 0; 
 		//Destructor
 		~Component();

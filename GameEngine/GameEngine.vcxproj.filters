@@ -30,6 +30,9 @@
     <ClCompile Include="MainCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLoop.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MainCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,6 +68,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairForward.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\MoonLightForest.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

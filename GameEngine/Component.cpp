@@ -17,6 +17,7 @@ namespace engine {
 	Component::~Component() {
 		SDL_DestroyTexture(texture);
 	}
-	//Update the component every tick
-	
+	void Component::spacebarEvent(const SDL_Event& event) {
+		//Do something
+	}
 }

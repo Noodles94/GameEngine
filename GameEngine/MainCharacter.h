@@ -9,13 +9,13 @@ namespace engine {
 	public:
 		void spacebarEvent(const SDL_Event& event);
 		 static MainCharacter* getInstance(int x, int y, int w, int h, const char* pathToTexture){
-			return new MainCharacter(pathToTexture);
+			return new MainCharacter(x, y, w, h, pathToTexture);
 		}
 		void tick()override;
 		void setAnimationSet(const char* texturePaths[], int numAnimations);
 	private:
 		std::vector<SDL_Texture*> textureSet;
-		MainCharacter(const char* pathToImage);
+		MainCharacter(int x, int y, int w, int h, const char* pathToImage);
 		// set speed of animation
 		int animationTick = 0;
 	};

@@ -4,8 +4,8 @@
 #include <SDL_image.h>
 namespace engine {
 
-	MainCharacter::MainCharacter(const char * pathToImg) 
-		:Component(64, 64, 64, 64, pathToImg)
+	MainCharacter::MainCharacter(int x, int y, int w, int h, const char * pathToImg) 
+		:Component(x, y, w, h, pathToImg)
 	{}
 
 	void MainCharacter::tick() {

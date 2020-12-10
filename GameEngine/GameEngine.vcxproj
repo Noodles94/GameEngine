@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLoop.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="MainCharacter.h" />
@@ -163,6 +165,7 @@
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\Cobblestone.bmp" />
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrass.bmp" />
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrassAndTwigs.bmp" />
+    <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\MoonLightForest.png" />
     <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairBackward.bmp" />
     <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairForward.bmp" />
     <Image Include="..\..\..\..\..\Downloads\ManInWheelchair.bmp" />
