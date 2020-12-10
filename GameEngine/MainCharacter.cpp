@@ -9,23 +9,24 @@ namespace engine {
 	{}
 
 	void MainCharacter::tick() {
-		int i = animationTick / 10;
+		int animationSpeed = 40;
+		int i = animationTick / animationSpeed;
+		//sets new texture
 		texture = textureSet[i];
-		if (animationTick >= (textureSet.size()-1) * 10) {
+		if (animationTick >= ((textureSet.size()-1) * animationSpeed) + (animationSpeed -1)) {
 			animationTick = 0;
 		}
-		else {
-	animationTick += 1;
-	}	
+		else{
+		animationTick += 1;
+		}
 	}
-	void MainCharacter::setAnimationSet(const char* texturePaths[])
+	void MainCharacter::setAnimationSet(const char* texturePaths[], int numAnimations)
 	{
-		//best solution
-		for (int i = 0; i < 3; i++) {
+		//Minnesläckage?? TexturePaths
+		for (int i = 0; i < numAnimations; i++) {
 			SDL_Texture*  textureTemp = IMG_LoadTexture(system.getMainRenderer(), texturePaths[i]);
 			textureSet.push_back(textureTemp);
 		}
-		texturePaths = NULL;
 	}
 	void MainCharacter::spacebarEvent(const SDL_Event& event) {
 		rectangle.y = rectangle.y + 10;

@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include "System.h"
 #include <iostream>
+#define FPS 60 //Frames per Second
 namespace engine {
 
 	GameLoop::GameLoop(){}
@@ -17,8 +18,12 @@ namespace engine {
 	
 	void GameLoop::loop() {
 		//SDL_SetRenderDrawColor(system.getMainRenderer(),100, 100, 100, 100);
+		const int tickInterval = 1000 / FPS;
+		Uint32 nextTick;
+		int delay;
 		bool continueLoop = true;
 		while (continueLoop) {
+			nextTick = SDL_GetTicks() + tickInterval;
 			SDL_Event event;
 			while (SDL_PollEvent(&event)) {
 				switch (event.type) {
@@ -43,6 +48,9 @@ namespace engine {
 			addNewComponents();
 			drawComponents();
 			SDL_RenderPresent(system.getMainRenderer());
+			delay = nextTick - SDL_GetTicks();
+			if (delay > 0)
+				SDL_Delay(delay);
 		}//outer WHILE
 
 	}

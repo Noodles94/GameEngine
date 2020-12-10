@@ -12,7 +12,7 @@ namespace engine {
 			return new MainCharacter(pathToTexture);
 		}
 		void tick()override;
-		void setAnimationSet(const char* texturePaths[]);
+		void setAnimationSet(const char* texturePaths[], int numAnimations);
 	private:
 		std::vector<SDL_Texture*> textureSet;
 		MainCharacter(const char* pathToImage);
