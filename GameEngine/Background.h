@@ -2,6 +2,7 @@
 #define BACKGROUND_H
 #include "Component.h"
 #include "System.h"
+#include <vector>
 
 namespace engine {
 	class Background : public Component
@@ -12,8 +13,11 @@ namespace engine {
 		}
 		void tick() override;
 		void draw() const;
+		void setBakgroundSet(const char* texturePaths[], int numAnimations);
 	private:
+		std::vector<SDL_Texture*> bakgroundSet;
 		Background(const char* pathToTexture);
+		int animationTick = 0;
 	};
 }
 #endif

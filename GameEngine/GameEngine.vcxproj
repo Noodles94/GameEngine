@@ -166,6 +166,9 @@
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrass.bmp" />
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrassAndTwigs.bmp" />
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\MoonLightForest.png" />
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Bakground\Bakgroundbase(1).bmp" />
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Bakground\Bakgroundbase(2).bmp" />
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Bakground\Bakgroundbase(3).bmp" />
     <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairBackward.bmp" />
     <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairForward.bmp" />
     <Image Include="..\..\..\..\..\Downloads\ManInWheelchair.bmp" />

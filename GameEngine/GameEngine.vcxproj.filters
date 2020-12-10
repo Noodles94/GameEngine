@@ -73,5 +73,14 @@
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\MoonLightForest.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Bakground\Bakgroundbase(1).bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Bakground\Bakgroundbase(2).bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Bakground\Bakgroundbase(3).bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

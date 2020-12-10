@@ -8,15 +8,24 @@
 using namespace engine;
 int main(int argc, char* argv[]) {
 	GameLoop game;
-	MainCharacter* t = MainCharacter::getInstance(64, 600 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp");
-	const char* mainCharacterTextureAnimations[4] = { "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp" ,
-		"C:/MasterMap/PixelArt/Characters/ManInWheelchairForward.bmp",
+	MainCharacter* t = MainCharacter::getInstance(64, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp");
+	
+	const char* mainCharacterTextureAnimations[] = { 
+		"C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp" ,
+		"C:/MasterMap/PixelArt/Characters/ManInWheelchairForward(1).bmp",
 		"C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp",
-		"C:/MasterMap/PixelArt/Characters/ManInWheelchairBackward.bmp" };
+		"C:/MasterMap/PixelArt/Characters/ManInWheelchairBackward(1).bmp" };
+	
 	t->setAnimationSet(mainCharacterTextureAnimations, 4);
-	Background* back = Background::getInstance("C:/MasterMap/PixelArt/BakgrundHinder/MoonLightForest.png" );
+	Background* back = Background::getInstance("C:/MasterMap/PixelArt/Bakground/BakgroundBase(1).bmp" );
+	const char* bakgroundTextureAnimations[] = {
+		"C:/MasterMap/PixelArt/Bakground/BakgroundBase(1).bmp",
+		"C:/MasterMap/PixelArt/Bakground/BakgroundBase(2).bmp",
+		"C:/MasterMap/PixelArt/Bakground/BakgroundBase(3).bmp",
+	};
+	back->setBakgroundSet(bakgroundTextureAnimations, 3);
 	game.addComponent(back);
 	game.addComponent(t);
 	game.loop(); 
 	return 0;
-}
+}	

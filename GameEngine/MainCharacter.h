@@ -20,7 +20,7 @@ namespace engine {
 		int animationTick = 0;
 		bool isJumping = false;
 		int startPosY = rectangle.y;
-		int lastTickJump = 0;
+		bool asending = false;
 	};
 }
 #endif
