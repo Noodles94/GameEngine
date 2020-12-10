@@ -58,5 +58,11 @@
     <Image Include="..\..\..\..\..\Downloads\ManInWheelchair.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairBackward.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairForward.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -80,8 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\MasterMap\SDL\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\MasterMap\SDL\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\jacob\OneDrive\Skrivbord\skola\cProg\SDL2-2.0.12\include;C:\MasterMap\SDL\SDL2-2.0.12\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\jacob\OneDrive\Skrivbord\skola\cProg\SDL2-2.0.12\lib\x64;C:\MasterMap\SDL\SDL2-2.0.12\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -126,7 +126,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\MasterMap\SDL\SDL2-2.0.12\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\MasterMap\SDL\SDL2-2.0.12\lib\x64;C:\Users\jacob\OneDrive\Skrivbord\skola\cProg\SDL2-2.0.12\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -163,6 +163,8 @@
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\Cobblestone.bmp" />
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrass.bmp" />
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\CobblestoneGrassAndTwigs.bmp" />
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairBackward.bmp" />
+    <Image Include="..\..\..\..\..\..\MasterMap\PixelArt\Characters\ManInWheelchairForward.bmp" />
     <Image Include="..\..\..\..\..\Downloads\ManInWheelchair.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -25,6 +25,15 @@ namespace engine {
 				case SDL_QUIT:
 					continueLoop = false;
 					break;
+				case SDL_KEYDOWN:
+					switch (event.key.keysym.sym) {
+					case SDLK_SPACE:
+						for (auto i : currentComponents) {
+							i->spacebarEvent(event);
+						}
+						break;
+					}
+					break;
 				}
 			}
 			for (auto i : currentComponents) {

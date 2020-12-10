@@ -1,4 +1,7 @@
 #include "MainCharacter.h"
+#include <SDL.h>
+#include "System.h"
+#include <SDL_image.h>
 namespace engine {
 
 	MainCharacter::MainCharacter(const char * pathToImg) 
@@ -6,19 +9,25 @@ namespace engine {
 	{}
 
 	void MainCharacter::tick() {
-		SDL_Event event;
-		while (SDL_PollEvent(&event)) {
-			switch (event.type) {
-				//When X is pressed on the window;
-			case SDL_KEYDOWN:
-				switch (event.key.keysym.sym) {
-				case SDLK_SPACE:
-					//rocket science
-					rectangle.y = rectangle.y + 10;
-					break;
-				}
-				break;
-			}
-		}//inner WHILE
+		int i = animationTick / 10;
+		texture = textureSet[i];
+		if (animationTick >= (textureSet.size()-1) * 10) {
+			animationTick = 0;
+		}
+		else {
+	animationTick += 1;
+	}	
+	}
+	void MainCharacter::setAnimationSet(const char* texturePaths[])
+	{
+		//best solution
+		for (int i = 0; i < 3; i++) {
+			SDL_Texture*  textureTemp = IMG_LoadTexture(system.getMainRenderer(), texturePaths[i]);
+			textureSet.push_back(textureTemp);
+		}
+		texturePaths = NULL;
+	}
+	void MainCharacter::spacebarEvent(const SDL_Event& event) {
+		rectangle.y = rectangle.y + 10;
 	}
 }
