@@ -18,6 +18,9 @@ namespace engine {
 		MainCharacter(int x, int y, int w, int h, const char* pathToImage);
 		// set speed of animation
 		int animationTick = 0;
+		bool isJumping = false;
+		int startPosY = rectangle.y;
+		int lastTickJump = 0;
 	};
 }
 #endif

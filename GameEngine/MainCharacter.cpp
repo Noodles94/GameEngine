@@ -29,6 +29,33 @@ namespace engine {
 		}
 	}
 	void MainCharacter::spacebarEvent(const SDL_Event& event) {
-		rectangle.y = rectangle.y + 10;
+		//jump
+		bool ascend = true;
+		if (rectangle.y == startPosY) {
+			isJumping = true;
+			ascend = true;
+		}
+		if (isJumping) {
+			//ascend
+			if ((rectangle.y >= rectangle.y + 50) && (rectangle.y == lastTickJump - 5) && ascend) {
+				//Up 5 pixels per frame
+				rectangle.y = rectangle.y - 5;
+				lastTickJump = rectangle.y;
+			}
+			else if (rectangle.y == 50) {
+				ascend = false;
+			}
+			else if (!ascend) {
+				//Down 10 pixels per frame
+				rectangle.y = rectangle.y + 10;
+				if (rectangle.y == startPosY) {
+					isJumping = false;
+				}
+			}
+			
+			//descend
+
+		}
+
 	}
 }
