@@ -22,18 +22,16 @@ namespace engine {
 	}
 	//Update
 	void MovingBlock::tick() {
-		rectangle.x = rectangle.x - 5;
-			MovingBlock* temp = MovingBlock::getInstance(texturePath);
-			game.toAddComponents.push_back(temp);
-			first = false;
+		rectangle.x = rectangle.x - 5;	
+
 		//if collission
 		for (auto i : game.currentComponents) {
 			if (MainCharacter* v = dynamic_cast<MainCharacter*>(i)) {
-				if (SDL_HasIntersection(v->getRect(), getRect())) {
+				if (SDL_HasIntersection(v->getHitbox(), getRect())) {
 					//terminate game
 					game.continueLoop = false;
 				}
-			}
+		}
 	}
 
 

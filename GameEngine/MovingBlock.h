@@ -11,6 +11,7 @@ namespace engine {
 		static MovingBlock* getInstance(const char* pathToTexture);
 		~MovingBlock();
 		void tick()override;
+
 	private:
 		bool first = true;
 		MovingBlock( const char* pathToImage);

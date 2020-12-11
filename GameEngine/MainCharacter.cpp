@@ -5,9 +5,14 @@
 #include <iostream>
 namespace engine {
 
-	MainCharacter::MainCharacter(int x, int y, int w, int h, const char * pathToImg) 
+	MainCharacter::MainCharacter(int x, int y, int w, int h, const char * pathToImg, int hitboxX, int hitboxY)
 		:Component(x, y, w, h, pathToImg)
-	{}
+	{
+		hitbox.w = hitboxX;
+		hitbox.h = hitboxY;
+		hitbox.x = x;
+		hitbox.y = y;
+	}
 
 	void MainCharacter::tick() {
 		int animationSpeed = 40;
@@ -22,11 +27,11 @@ namespace engine {
 		}
 		//jumping
 		if (isJumping && rectangle.y >= startPosY-110&& asending) {
-			rectangle.y = rectangle.y - 5;
+			moveCharacter(0, -5);
 		}
 		else if(isJumping&&rectangle.y <= startPosY-5){
 			asending = false;
-			rectangle.y = rectangle.y + 5;
+			moveCharacter(0, 5);
 		}
 		else {
 			asending = true;
@@ -45,6 +50,17 @@ namespace engine {
 			SDL_Texture*  textureTemp = IMG_LoadTexture(system.getMainRenderer(), texturePaths[i]);
 			textureSet.push_back(textureTemp);
 		}
+	}
+	const SDL_Rect* MainCharacter::getHitbox()
+	{
+		return  &hitbox;
+	}
+	void MainCharacter::moveCharacter(int x, int y)
+	{
+		rectangle.x = rectangle.x + x;
+		rectangle.y = rectangle.y + y;
+		hitbox.x = hitbox.x + x;
+		hitbox.y = hitbox.y + y;
 	}
 	void MainCharacter::spacebarEvent(const SDL_Event& event) {
 		isJumping = true;

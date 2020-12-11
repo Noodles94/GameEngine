@@ -9,7 +9,7 @@
 
 using namespace engine;
 int main(int argc, char* argv[]) {
-	MainCharacter* t = MainCharacter::getInstance(64, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp");
+	MainCharacter* t = MainCharacter::getInstance(64, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp",40,40);
 	
 	const char* mainCharacterTextureAnimations[] = { 
 		"C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp" ,

@@ -8,14 +8,17 @@ namespace engine {
 	{
 	public:
 		void spacebarEvent(const SDL_Event& event);
-		 static MainCharacter* getInstance(int x, int y, int w, int h, const char* pathToTexture){
-			return new MainCharacter(x, y, w, h, pathToTexture);
+		 static MainCharacter* getInstance(int x, int y, int w, int h, const char* pathToTexture,int hitboxX, int hitboxY){
+			return new MainCharacter(x, y, w, h, pathToTexture, hitboxX, hitboxY);
 		}
 		void tick()override;
 		void setAnimationSet(const char* texturePaths[], int numAnimations);
+		const SDL_Rect* getHitbox();
 	private:
+		void moveCharacter(int x, int y);
+		SDL_Rect hitbox;
 		std::vector<SDL_Texture*> textureSet;
-		MainCharacter(int x, int y, int w, int h, const char* pathToImage);
+		MainCharacter(int x, int y, int w, int h, const char* pathToImage, int hitboxX, int hitboxY);
 		// set speed of animation
 		int animationTick = 0;
 		bool isJumping = false;
