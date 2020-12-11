@@ -20,6 +20,8 @@ namespace engine {
 	}
 	Component::~Component() {
 		SDL_DestroyTexture(texture);
+		//texture path minnesläckage?
+		//delete texturePath;
 	}
 	void Component::spacebarEvent(const SDL_Event& event) {
 		//Do something

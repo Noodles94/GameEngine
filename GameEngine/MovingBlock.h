@@ -16,6 +16,8 @@ namespace engine {
 		bool first = true;
 		MovingBlock( const char* pathToImage);
 		static const int blockHeight = 496; //ScreenHeight - Constant
+		bool alive = true;
+		int dd = 0;
 	};
 }
 #endif

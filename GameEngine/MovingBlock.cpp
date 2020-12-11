@@ -22,8 +22,7 @@ namespace engine {
 	}
 	//Update
 	void MovingBlock::tick() {
-		rectangle.x = rectangle.x - 5;	
-
+		rectangle.x = rectangle.x - 5;
 		//if collission
 		for (auto i : game.currentComponents) {
 			if (MainCharacter* v = dynamic_cast<MainCharacter*>(i)) {
@@ -31,19 +30,16 @@ namespace engine {
 					//terminate game
 					game.continueLoop = false;
 				}
+			}
 		}
-	}
-
-
-	
-
-
-		//if (asd) {
-		//	MainCharacter* d = MainCharacter::getInstance(400, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp");
-		//	game.addComponent(d);
-		//	asd = false;
-		//	MovingBlock* mb = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
-		//	game.addComponent(mb);
-		//}
+		//Destroy objects that goes out of window
+		if (rectangle.x < 0 - 32 && alive) {
+			alive = false;
+			game.toRemoveComponents.push_back(this);
+		}
+		++dd;
+		if (dd % 10 == 0 && alive) {
+			std::cout << "living";
+		}
 	}
 }

@@ -52,6 +52,7 @@ namespace engine {
 			SDL_RenderClear(system.getMainRenderer());
 			addNewComponents();
 			drawComponents();
+			//removeOldComponents();
 			SDL_RenderPresent(system.getMainRenderer());
 			delay = nextTick - SDL_GetTicks();
 			if (delay > 0)
@@ -64,6 +65,17 @@ namespace engine {
 			currentComponents.push_back(i);
 		}
 		toAddComponents.clear();
+	}
+	void GameLoop::removeOldComponents() {
+		for (std::vector<Component*>::iterator i = currentComponents.begin(); i != currentComponents.end();) {
+			for (Component* c : toRemoveComponents) {
+				if (*i == c) {
+					i = currentComponents.erase(i);
+					delete c;
+				}
+				else { ++i; }
+			}
+		}
 	}
 	void GameLoop::drawComponents() {
 		for (auto i : currentComponents) {
