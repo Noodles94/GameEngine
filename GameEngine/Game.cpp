@@ -6,6 +6,7 @@
 #include "MainCharacter.h"
 #include "Background.h"
 #include "MovingBlock.h"
+
 using namespace engine;
 int main(int argc, char* argv[]) {
 	MainCharacter* t = MainCharacter::getInstance(64, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp");

@@ -19,6 +19,7 @@ namespace engine {
 		Component(int x, int y, int w, int h, const char* pathToTexture);
 		SDL_Rect rectangle;
 		SDL_Texture* texture;
+		const char* texturePath;
 	private:
 		
 	};

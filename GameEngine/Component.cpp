@@ -7,7 +7,8 @@ namespace engine {
 	//Constructor
 	Component::Component(int x, int y, int w, int h, const char* pathToTexture)
 		:rectangle{ x, y, w, h }
-	{
+	{ 
+		texturePath = pathToTexture;
 		texture = IMG_LoadTexture(system.getMainRenderer(), pathToTexture);
 	}
 	const SDL_Rect* Component::getRect() {
