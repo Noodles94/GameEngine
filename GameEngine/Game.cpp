@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(2).bmp",
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(3).bmp",
 	};
-	back->setBakgroundSet(bakgroundTextureAnimations, 3);
+	back->setBackgroundSet(bakgroundTextureAnimations, 3);
 	game.addComponent(back);
 	game.addComponent(t);
 	game.loop(); 

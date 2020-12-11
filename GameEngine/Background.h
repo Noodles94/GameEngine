@@ -13,9 +13,9 @@ namespace engine {
 		}
 		void tick() override;
 		void draw() const;
-		void setBakgroundSet(const char* texturePaths[], int numAnimations);
+		void setBackgroundSet(const char* texturePaths[], int numAnimations);
 	private:
-		std::vector<SDL_Texture*> bakgroundSet;
+		std::vector<SDL_Texture*> backgroundSet;
 		Background(const char* pathToTexture);
 		int animationTick = 0;
 	};
