@@ -19,9 +19,9 @@ int main(int argc, char* argv[]) {
 	t->setAnimationSet(mainCharacterTextureAnimations, 4);
 	Background* back = Background::getInstance("C:/MasterMap/PixelArt/Bakground/BakgroundBase(1).bmp" );
 	const char* bakgroundTextureAnimations[] = {
-		"C:/MasterMap/PixelArt/Bakground/BakgroundBase(1).bmp",
-		"C:/MasterMap/PixelArt/Bakground/BakgroundBase(2).bmp",
-		"C:/MasterMap/PixelArt/Bakground/BakgroundBase(3).bmp",
+		"C:/MasterMap/PixelArt/Background/BakgroundBase(1).bmp",
+		"C:/MasterMap/PixelArt/Background/BakgroundBase(2).bmp",
+		"C:/MasterMap/PixelArt/Background/BakgroundBase(3).bmp",
 	};
 	back->setBakgroundSet(bakgroundTextureAnimations, 3);
 	game.addComponent(back);
