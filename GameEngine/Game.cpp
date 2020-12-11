@@ -5,9 +5,9 @@
 #include "Component.h"
 #include "MainCharacter.h"
 #include "Background.h"
+#include "MovingBlock.h"
 using namespace engine;
 int main(int argc, char* argv[]) {
-	GameLoop game;
 	MainCharacter* t = MainCharacter::getInstance(64, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp");
 	
 	const char* mainCharacterTextureAnimations[] = { 
@@ -23,8 +23,11 @@ int main(int argc, char* argv[]) {
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(2).bmp",
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(3).bmp",
 	};
+
+	MovingBlock* mb = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
 	back->setBackgroundSet(bakgroundTextureAnimations, 3);
 	game.addComponent(back);
+	game.addComponent(mb);
 	game.addComponent(t);
 	game.loop(); 
 	return 0;

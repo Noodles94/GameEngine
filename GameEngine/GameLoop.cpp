@@ -4,7 +4,7 @@
 #include <iostream>
 #define FPS 60 //Frames per Second
 namespace engine {
-
+	GameLoop game;
 	GameLoop::GameLoop(){}
 	GameLoop::~GameLoop()
 	{

@@ -152,6 +152,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="MainCharacter.cpp" />
+    <ClCompile Include="MovingBlock.cpp" />
     <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="MainCharacter.h" />
+    <ClInclude Include="MovingBlock.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
   <ItemGroup>

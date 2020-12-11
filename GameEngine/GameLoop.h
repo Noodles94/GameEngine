@@ -27,6 +27,7 @@ namespace engine {
 		void drawComponents();
 
 	};
+	extern GameLoop game;
 }
 
 #endif // !1
