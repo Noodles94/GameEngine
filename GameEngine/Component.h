@@ -12,6 +12,7 @@ namespace engine {
 		virtual void spacebarEvent(const SDL_Event &event);
 		virtual void draw() const;
 		virtual void tick()= 0; 
+		const SDL_Rect* getRect();
 		//Destructor
 		~Component();
 	protected:

@@ -14,11 +14,12 @@ namespace engine {
 		void loop();
 		//AddComponentToGame
 		void addComponent(Component* component);
+		//public because 
+		std::vector<Component*> currentComponents;
 	private:
 		//The components that should be removed the next frame
 		std::vector<Component*> toRemoveComponents;
 		//The componenets that are currently in the game loop
-		std::vector<Component*> currentComponents;
 		//The components that should be added the next frame
 		std::vector<Component*> toAddComponents;
 		//Add new components to vector which is used in gameloop

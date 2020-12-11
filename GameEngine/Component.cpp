@@ -10,6 +10,9 @@ namespace engine {
 	{
 		texture = IMG_LoadTexture(system.getMainRenderer(), pathToTexture);
 	}
+	const SDL_Rect* Component::getRect() {
+		return &rectangle;
+	}
 	//Draw the image
 	void Component::draw() const {
 		SDL_RenderCopy(system.getMainRenderer(), texture, NULL, &rectangle);

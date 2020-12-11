@@ -1,6 +1,7 @@
 #ifndef MOVINGBLOCK_H
 #define MOVINGBLOCK_H
 #include "Component.h"
+#include "GameLoop.h"
 #include <vector>
 
 namespace engine {

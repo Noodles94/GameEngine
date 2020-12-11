@@ -1,6 +1,8 @@
 #include "MovingBlock.h"
 #include "GameLoop.h"
 #include "MainCharacter.h"
+#include "Component.h"
+#include <SDL.h>
 namespace engine {
 
 	//Constructor
@@ -15,6 +17,11 @@ namespace engine {
 	//Update
 	void MovingBlock::tick() {
 		rectangle.x = rectangle.x - 1;
+
+		//if collission
+		//if (SDL_IntersectRect(MainCharacter::getInstance()->getRect(), rectangle, NULL)) {
+
+		//}
 		//if (asd) {
 		//	MainCharacter* d = MainCharacter::getInstance(400, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp");
 		//	game.addComponent(d);
