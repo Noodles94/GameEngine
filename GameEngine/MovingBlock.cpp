@@ -38,7 +38,7 @@ namespace engine {
 			game.toRemoveComponents.push_back(this);
 		}
 		++dd;
-		if (dd % 10 == 0 && alive) {
+		if (dd % 10 == 0) {
 			std::cout << "living";
 		}
 	}
