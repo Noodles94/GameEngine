@@ -31,6 +31,8 @@ namespace engine {
 		void drawComponents();
 		//add obstacele to game
 		void addObstacles();
+		//add more difficult obstacles
+		void addObstaclesMoreDifficult();
 		//remove old components in the next frame
 		void removeOldComponents();
 	};

@@ -49,6 +49,7 @@ namespace engine {
 				i->tick();
 			}
 			addObstacles();
+			addObstaclesMoreDifficult();
 			SDL_RenderClear(system.getMainRenderer());
 			addNewComponents();
 			drawComponents();
@@ -85,14 +86,20 @@ namespace engine {
 			i->draw();
 		}
 	}
+	void GameLoop::addObstaclesMoreDifficult() {
+		if (obstacleCreationTick>140) {
+			MovingBlock* temp = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
+			game.toAddComponents.push_back(temp);
+		}
+	}
 	void GameLoop::addObstacles() {
 		if (obstacleCreationTick >=(obstacleCreationSpeed -1)){
 			obstacleCreationTick = 0;
 			MovingBlock* temp = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
 			game.toAddComponents.push_back(temp);
 			// makes obstacles create faster and faster until maxspeed
-			if(obstacleCreationSpeed>40)
-				obstacleCreationSpeed -= 10;
+			if(obstacleCreationSpeed>80) 
+				obstacleCreationSpeed -= 1;
 		}
 		else {
 			obstacleCreationTick += 1;
