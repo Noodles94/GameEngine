@@ -2,6 +2,7 @@
 #define GAMELOOP_H
 #include <vector>
 #include "Component.h"
+#include "Texturepaths.h"
 namespace engine {
 	class GameLoop
 	{
@@ -23,7 +24,8 @@ namespace engine {
 		std::vector<Component*> toRemoveComponents;
 
 	private:
-		int obstacleCreationTick = 0;
+		int minDistanceBeetweenObjects = 80;
+		int obstacleCreationCurrentTick = 0;
 		int obstacleCreationSpeed = 160;
 		//Add new components to vector which is used in gameloop
 		void addNewComponents();
@@ -31,6 +33,7 @@ namespace engine {
 		void drawComponents();
 		//add obstacele to game
 		void addObstacles();
+		void removeAllComponents();
 		//add more difficult obstacles
 		void addObstaclesMoreDifficult();
 		//remove old components in the next frame

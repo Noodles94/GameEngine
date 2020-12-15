@@ -3,6 +3,7 @@
 #include "System.h"
 #include <iostream>
 #include "MovingBlock.h"
+#include "Texturepaths.h"
 #define FPS 60 //Frames per Second
 namespace engine {
 	GameLoop game;
@@ -49,7 +50,7 @@ namespace engine {
 				i->tick();
 			}
 			addObstacles();
-			addObstaclesMoreDifficult();
+			//addObstaclesMoreDifficult();
 			SDL_RenderClear(system.getMainRenderer());
 			addNewComponents();
 			drawComponents();
@@ -59,8 +60,10 @@ namespace engine {
 			if (delay > 0)
 				SDL_Delay(delay);
 		}//outer WHILE
+		removeAllComponents();
 		std::cout << "Your score: "<< points;
 	}
+
 	void GameLoop::addNewComponents() {
 		for (auto i : toAddComponents) {
 			currentComponents.push_back(i);
@@ -86,24 +89,36 @@ namespace engine {
 			i->draw();
 		}
 	}
-	void GameLoop::addObstaclesMoreDifficult() {
-		if (obstacleCreationTick>140) {
-			MovingBlock* temp = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
-			game.toAddComponents.push_back(temp);
-		}
-	}
+	//void GameLoop::addObstaclesMoreDifficult() {
+	//	if (obstacleCreationTick>140) {
+	//		MovingBlock* temp = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
+	//		game.toAddComponents.push_back(temp);
+	//	}
+	//}
+
 	void GameLoop::addObstacles() {
-		if (obstacleCreationTick >=(obstacleCreationSpeed -1)){
-			obstacleCreationTick = 0;
-			MovingBlock* temp = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
+		if (obstacleCreationCurrentTick >=(obstacleCreationSpeed -1)){
+			std::vector <const char*>obstacleList = Texturepaths::getTexture("Obstacle");
+			
+			obstacleCreationCurrentTick = 0;
+			MovingBlock* temp = MovingBlock::getInstance(obstacleList[rand() % obstacleList.size()]);
 			game.toAddComponents.push_back(temp);
 			// makes obstacles create faster and faster until maxspeed
-			if(obstacleCreationSpeed>80) 
+			if(obstacleCreationSpeed> minDistanceBeetweenObjects)
 				obstacleCreationSpeed -= 1;
 		}
 		else {
-			obstacleCreationTick += 1;
+			obstacleCreationCurrentTick += 1;
 		}
 		
 	}
+
+	void GameLoop::removeAllComponents() {
+		//for (std::vector<Component*>::iterator i = currentComponents.begin(); i != currentComponents.end(); ++i) {
+		for(int i = 0; i< currentComponents.size(); i++){
+			delete currentComponents[i];
+		}
+		currentComponents.clear();
+	}
+		
 }

@@ -23,7 +23,7 @@ namespace engine {
 			animationTick = 0;
 		}
 		else{
-		animationTick += 1;
+			animationTick += 1;
 		}
 		//jumping
 		if (isJumping && rectangle.y >= startPosY-110&& asending) {

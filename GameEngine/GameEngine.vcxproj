@@ -154,6 +154,7 @@
     <ClCompile Include="MainCharacter.cpp" />
     <ClCompile Include="MovingBlock.cpp" />
     <ClCompile Include="System.cpp" />
+    <ClCompile Include="Texturepaths.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="MainCharacter.h" />
     <ClInclude Include="MovingBlock.h" />
     <ClInclude Include="System.h" />
+    <ClInclude Include="Texturepaths.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\..\..\MasterMap\PixelArt\BakgrundHinder\Cobblestone.bmp" />
