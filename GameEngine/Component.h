@@ -2,6 +2,7 @@
 #define COMPONENT_H
 #include <SDL.h>
 #include <string>
+#include <vector>
 
 namespace engine {
 	class Component
@@ -16,14 +17,16 @@ namespace engine {
 		//Destructor
 		~Component();
 		void setAnimationSpeed(int speed);
+		void setAnimationList(const char* texturePaths[], int numAnimations);
 	protected:
 		Component(int x, int y, int w, int h, const char* pathToTexture);
 		SDL_Rect rectangle;
 		SDL_Texture* texture;
 		const char* texturePath;
+		//defult animation speed
 		int animationSpeed = 40;
 		int currentAnimationTick = 0;
-
+		std::vector<SDL_Texture*> animationList;
 	private:
 		
 	};

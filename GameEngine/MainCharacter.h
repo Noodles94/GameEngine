@@ -12,12 +12,12 @@ namespace engine {
 			return new MainCharacter(x, y, w, h, pathToTexture, hitboxX, hitboxY);
 		}
 		void tick()override;
-		void setAnimationSet(const char* texturePaths[], int numAnimations);
 		const SDL_Rect* getHitbox();
-	private:
 		void moveCharacter(int x, int y);
+		void setIsJumping(bool jumping, bool ascending);
+	private:
+	
 		SDL_Rect hitbox;
-		std::vector<SDL_Texture*> textureSet;
 		MainCharacter(int x, int y, int w, int h, const char* pathToImage, int hitboxX, int hitboxY);
 		// set speed of animation
 		bool isJumping = false;

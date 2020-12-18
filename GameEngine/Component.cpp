@@ -27,4 +27,13 @@ namespace engine {
 		animationSpeed = speed;
 	}
 
+	void Component::setAnimationList(const char* texturePaths[], int numAnimations)
+	{
+		//Minnesläckage?? TexturePaths
+		for (int i = 0; i < numAnimations; i++) {
+			SDL_Texture* textureTemp = IMG_LoadTexture(system.getMainRenderer(), texturePaths[i]);
+			animationList.push_back(textureTemp);
+		}
+	}
+
 }

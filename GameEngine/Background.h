@@ -14,9 +14,7 @@ namespace engine {
 		void spacebarEvent(const SDL_Event& event);
 		void tick() override;
 		void draw() const;
-		void setBackgroundSet(const char* texturePaths[], int numAnimations);
 	private:
-		std::vector<SDL_Texture*> backgroundSet;
 		Background(const char* pathToTexture);
 	};
 }

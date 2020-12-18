@@ -30,8 +30,21 @@ namespace engine {
 		for (auto i : game.currentComponents) {
 			if (MainCharacter* v = dynamic_cast<MainCharacter*>(i)) {
 				if (SDL_HasIntersection(v->getHitbox(), getRect())) {
-					//terminate game
-					game.continueLoop = false;
+					if (((v->getHitbox()->y + (v->getHitbox()->h/1.5)) >= (rectangle.y- rectangle.h/2)
+						&& (v->getHitbox()->y + (v->getHitbox()->h) <= (rectangle.y+6)))) {
+						if ((v->getHitbox()->x + (v->getHitbox()->w / 1.5)) <= (rectangle.x - rectangle.w / 2)) {
+							v->setIsJumping(false,false);
+						}
+						else {
+							v->setIsJumping(false,true);
+							v->moveCharacter(0, -5);
+						}
+							
+					}else {
+						//terminate game
+						game.continueLoop = false;
+					}
+				
 				}
 			}
 		}

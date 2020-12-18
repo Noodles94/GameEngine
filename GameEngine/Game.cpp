@@ -9,7 +9,7 @@
 #include "Texturepaths.h"
 using namespace engine;
 int main(int argc, char* argv[]) {
-	MainCharacter* t = MainCharacter::getInstance(64, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp",40,40);
+	MainCharacter* t = MainCharacter::getInstance(64, 530 - 64, 64, 64, "C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp",50,60);
 	
 	const char* mainCharacterTextureAnimations[] = { 
 		"C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp" ,
@@ -17,7 +17,8 @@ int main(int argc, char* argv[]) {
 		"C:/MasterMap/PixelArt/Characters/ManInWheelchair.bmp",
 		"C:/MasterMap/PixelArt/Characters/ManInWheelchairBackward(1).bmp" };
 	
-	t->setAnimationSet(mainCharacterTextureAnimations, 4);
+	t->setAnimationList(mainCharacterTextureAnimations, 4);
+	
 	Background* back = Background::getInstance("C:/MasterMap/PixelArt/Bakground/BakgroundBase(1).bmp" );
 	const char* bakgroundTextureAnimations[] = {
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(1).bmp",
@@ -25,7 +26,7 @@ int main(int argc, char* argv[]) {
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(3).bmp",
 	};
 	back->setAnimationSpeed(20);
-	
+	back->setAnimationList(bakgroundTextureAnimations, 3);
 	
 	MovingBlock* mb = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
 	Texturepaths::addTexture("Obstacle", "C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
@@ -37,7 +38,7 @@ int main(int argc, char* argv[]) {
 	MovingBlock* mb3 = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/CobblestoneGrassAndTwigs.bmp");
 	Texturepaths::addTexture("Obstacle", "C:/MasterMap/PixelArt/Obstacles/CobblestoneGrassAndTwigs.bmp");
 	
-	back->setBackgroundSet(bakgroundTextureAnimations, 3);
+	
 	game.addComponent(back);
 	game.addComponent(mb);
 	game.addComponent(t);
