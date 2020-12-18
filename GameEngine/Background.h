@@ -11,13 +11,13 @@ namespace engine {
 		static Background* getInstance(const char* pathToTexture) {
 			return new Background(pathToTexture);
 		}
+		void spacebarEvent(const SDL_Event& event);
 		void tick() override;
 		void draw() const;
 		void setBackgroundSet(const char* texturePaths[], int numAnimations);
 	private:
 		std::vector<SDL_Texture*> backgroundSet;
 		Background(const char* pathToTexture);
-		int animationTick = 0;
 	};
 }
 #endif

@@ -20,7 +20,6 @@ namespace engine {
 		std::vector<SDL_Texture*> textureSet;
 		MainCharacter(int x, int y, int w, int h, const char* pathToImage, int hitboxX, int hitboxY);
 		// set speed of animation
-		int animationTick = 0;
 		bool isJumping = false;
 		int startPosY = rectangle.y;
 		bool asending = false;

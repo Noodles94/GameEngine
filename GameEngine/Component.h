@@ -9,17 +9,21 @@ namespace engine {
 	public:
 		//Fabric function which returns an object created on the stack
 		//virtual Component* getInstance(int x, int y, int w, int h, const char* pathToTexture) = 0;
-		virtual void spacebarEvent(const SDL_Event &event);
+		virtual void spacebarEvent(const SDL_Event &event) = 0;
 		virtual void draw() const;
 		virtual void tick()= 0; 
 		const SDL_Rect* getRect();
 		//Destructor
 		~Component();
+		void setAnimationSpeed(int speed);
 	protected:
 		Component(int x, int y, int w, int h, const char* pathToTexture);
 		SDL_Rect rectangle;
 		SDL_Texture* texture;
 		const char* texturePath;
+		int animationSpeed = 40;
+		int currentAnimationTick = 0;
+
 	private:
 		
 	};

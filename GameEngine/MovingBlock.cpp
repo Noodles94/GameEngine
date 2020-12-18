@@ -16,6 +16,9 @@ namespace engine {
 	{
 		return new MovingBlock(pathToTexture);;
 	}
+
+	//does nothing for moving block
+	void MovingBlock::spacebarEvent(const SDL_Event& event) {};
 	//Destructor
 	MovingBlock::~MovingBlock() {
 		//ej minnesläckage

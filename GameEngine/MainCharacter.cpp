@@ -15,15 +15,15 @@ namespace engine {
 	}
 
 	void MainCharacter::tick() {
-		int animationSpeed = 40;
-		int i = animationTick / animationSpeed;
+		int i = currentAnimationTick / animationSpeed;
 		//sets new texture
 		texture = textureSet[i];
-		if (animationTick >= ((textureSet.size()-1) * animationSpeed) + (animationSpeed -1)) {
-			animationTick = 0;
+		// if current Animation Tick Is one  lower than max reset the tick counter
+		if (currentAnimationTick >= ((textureSet.size()-1) * animationSpeed) + (animationSpeed -1)) {
+			currentAnimationTick = 0;
 		}
 		else{
-			animationTick += 1;
+			currentAnimationTick += 1;
 		}
 		//jumping
 		if (isJumping && rectangle.y >= startPosY-110&& asending) {
@@ -62,6 +62,7 @@ namespace engine {
 		hitbox.x = hitbox.x + x;
 		hitbox.y = hitbox.y + y;
 	}
+	
 	void MainCharacter::spacebarEvent(const SDL_Event& event) {
 		isJumping = true;
 	}

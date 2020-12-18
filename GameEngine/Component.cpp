@@ -22,7 +22,9 @@ namespace engine {
 		SDL_DestroyTexture(texture);
 		//texture path minnesläckage?
 	}
-	void Component::spacebarEvent(const SDL_Event& event) {
-		//Do something
+	void Component::setAnimationSpeed(int speed)
+	{
+		animationSpeed = speed;
 	}
+
 }

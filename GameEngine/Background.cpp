@@ -19,16 +19,19 @@ namespace engine {
 			backgroundSet.push_back(textureTemp);
 		}
 	}
+	//does nothing for backgroud
+	void Background::spacebarEvent(const SDL_Event& event)
+	{
+	}
 	void Background::tick() {
-		int animationSpeed = 20;
-		int i = animationTick / animationSpeed;
+		int i = currentAnimationTick / animationSpeed;
 		//sets new texture
 		texture = backgroundSet[i];
-		if (animationTick >= ((backgroundSet.size() - 1) * animationSpeed) + (animationSpeed - 1)) {
-			animationTick = 0;
+		if (currentAnimationTick >= ((backgroundSet.size() - 1) * animationSpeed) + (animationSpeed - 1)) {
+			currentAnimationTick = 0;
 		}
 		else {
-			animationTick += 1;
+			currentAnimationTick += 1;
 		}
 	}
 }

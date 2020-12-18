@@ -24,14 +24,19 @@ int main(int argc, char* argv[]) {
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(2).bmp",
 		"C:/MasterMap/PixelArt/Background/BakgroundBase(3).bmp",
 	};
+	back->setAnimationSpeed(20);
 	
 	
 	MovingBlock* mb = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
 	Texturepaths::addTexture("Obstacle", "C:/MasterMap/PixelArt/Obstacles/Cobblestone.bmp");
+
 	MovingBlock* mb2 = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/CobblestoneGrass.bmp");
 	Texturepaths::addTexture("Obstacle", "C:/MasterMap/PixelArt/Obstacles/CobblestoneGrass.bmp");
+	
+	
 	MovingBlock* mb3 = MovingBlock::getInstance("C:/MasterMap/PixelArt/Obstacles/CobblestoneGrassAndTwigs.bmp");
 	Texturepaths::addTexture("Obstacle", "C:/MasterMap/PixelArt/Obstacles/CobblestoneGrassAndTwigs.bmp");
+	
 	back->setBackgroundSet(bakgroundTextureAnimations, 3);
 	game.addComponent(back);
 	game.addComponent(mb);

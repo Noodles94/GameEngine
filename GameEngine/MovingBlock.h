@@ -8,6 +8,7 @@ namespace engine {
 	class MovingBlock : public Component
 	{
 	public:
+		void spacebarEvent(const SDL_Event& event);
 		static MovingBlock* getInstance(const char* pathToTexture);
 		~MovingBlock();
 		void tick()override;
