@@ -101,7 +101,7 @@ namespace engine {
 			std::vector <const char*>obstacleList = Texturepaths::getTexture("Obstacle");
 			
 			obstacleCreationCurrentTick = 0;
-			MovingBlock* temp = MovingBlock::getInstance(obstacleList[rand() % obstacleList.size()]);
+			MovingBlock* temp = MovingBlock::getInstance(obstacleList[rand() % obstacleList.size()],497  - rand() % 70);
 			game.toAddComponents.push_back(temp);
 			// makes obstacles create faster and faster until maxspeed
 			if(obstacleCreationSpeed> minDistanceBeetweenObjects)

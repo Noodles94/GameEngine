@@ -9,14 +9,12 @@ namespace engine {
 	{
 	public:
 		void spacebarEvent(const SDL_Event& event);
-		static MovingBlock* getInstance(const char* pathToTexture);
+		static MovingBlock* getInstance(const char* pathToTexture, int blockHeight);
 		~MovingBlock();
 		void tick()override;
-
 	private:
 		bool first = true;
-		MovingBlock( const char* pathToImage);
-		static const int blockHeight = 496; //ScreenHeight - Constant
+		MovingBlock( const char* pathToImage, int blockHeight);
 		bool alive = true;
 		int dd = 0;
 	};

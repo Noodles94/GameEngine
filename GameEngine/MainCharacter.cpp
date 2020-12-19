@@ -29,8 +29,10 @@ namespace engine {
 		if (isJumping && rectangle.y >= startPosY - 110 && asending) {
 			moveCharacter(0, -5);
 		}
-		else if (rectangle.y <= startPosY - 5) {
+		else if(isJumping && asending) {
 			asending = false;
+		}
+		else if (!asending&&rectangle.y <= startPosY - 5) {
 			moveCharacter(0, 5);
 		}
 		else {
@@ -56,7 +58,7 @@ namespace engine {
 	}
 	
 	void MainCharacter::spacebarEvent(const SDL_Event& event) {
-		if (!isJumping == true) {
+		if (!isJumping) {
 			isJumping = true;
 			asending = true;
 		}

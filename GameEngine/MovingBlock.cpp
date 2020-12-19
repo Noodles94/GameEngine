@@ -8,13 +8,13 @@
 
 namespace engine {
 	//Constructor
-	MovingBlock::MovingBlock(const char* pathToImage)
+	MovingBlock::MovingBlock(const char* pathToImage, int blockHeight)
 		:Component(800 - 32, blockHeight, 32, 32, pathToImage)
 	{
 	}
-	MovingBlock* MovingBlock::getInstance(const char* pathToTexture)
+	MovingBlock* MovingBlock::getInstance(const char* pathToTexture, int blockHeight)
 	{
-		return new MovingBlock(pathToTexture);;
+		return new MovingBlock(pathToTexture,  blockHeight);;
 	}
 
 	//does nothing for moving block
@@ -23,28 +23,28 @@ namespace engine {
 	MovingBlock::~MovingBlock() {
 		//ej minnesläckage
 	}
-	//Update
 	void MovingBlock::tick() {
 		rectangle.x = rectangle.x - 5;
-		//if collission
 		for (auto i : game.currentComponents) {
+			//if character
 			if (MainCharacter* v = dynamic_cast<MainCharacter*>(i)) {
-				if (SDL_HasIntersection(v->getHitbox(), getRect())) {
-					if (((v->getHitbox()->y + (v->getHitbox()->h/1.5)) >= (rectangle.y- rectangle.h/2)
+				//if charachter has an colltion with object
+				if (SDL_HasIntersection(v->getHitbox(), getRect())) {		
+					//if at the end of the box
+					if ((v->getHitbox()->x + (v->getHitbox()->w/2 )) >= (rectangle.x + rectangle.w)) {
+						//start falling
+						v->setIsJumping(false, false);
+					}  
+					//if charachter lands on top of box
+					else if (((v->getHitbox()->y + (v->getHitbox()->h)) >= (rectangle.y- rectangle.h)
 						&& (v->getHitbox()->y + (v->getHitbox()->h) <= (rectangle.y+6)))) {
-						if ((v->getHitbox()->x + (v->getHitbox()->w / 1.5)) <= (rectangle.x - rectangle.w / 2)) {
-							v->setIsJumping(false,false);
-						}
-						else {
-							v->setIsJumping(false,true);
-							v->moveCharacter(0, -5);
-						}
-							
+						
+							//jumping = false, asending is true. This floats the character on its current hight by turning of gravity. 
+							v->setIsJumping(false, true);							
 					}else {
-						//terminate game
+						//game over 
 						game.continueLoop = false;
-					}
-				
+					}	
 				}
 			}
 		}
@@ -54,8 +54,5 @@ namespace engine {
 			game.toRemoveComponents.push_back(this);
 		}
 		++dd;
-		if (dd % 10 == 0) {
-			std::cout << "living";
-		}
 	}
 }
