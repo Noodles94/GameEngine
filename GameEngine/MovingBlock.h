@@ -16,7 +16,6 @@ namespace engine {
 		bool first = true;
 		MovingBlock( const char* pathToImage, int blockHeight);
 		bool alive = true;
-		int dd = 0;
 	};
 }
 #endif

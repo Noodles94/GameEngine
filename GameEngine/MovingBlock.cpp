@@ -53,6 +53,5 @@ namespace engine {
 			alive = false;
 			game.toRemoveComponents.push_back(this);
 		}
-		++dd;
 	}
 }
