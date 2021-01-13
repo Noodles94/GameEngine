@@ -17,16 +17,9 @@ namespace engine {
 		return new MovingBlock(pathToTexture,  blockHeight);;
 	}
 
-	//does nothing for moving block
-	void MovingBlock::spacebarEvent(const SDL_Event& event) {};
-	//Destructor
-	MovingBlock::~MovingBlock() {
-		//ej minnesläckage
-	}
 	void MovingBlock::tick() {
-		rectangle.x = rectangle.x - 5;
+		rectangle.x = rectangle.x - 5;  
 		for (auto i : game.currentComponents) {
-			//if character
 			if (MainCharacter* v = dynamic_cast<MainCharacter*>(i)) {
 				//if charachter has an colltion with object
 				if (SDL_HasIntersection(v->getHitbox(), getRect())) {		
@@ -38,7 +31,6 @@ namespace engine {
 					//if charachter lands on top of box
 					else if (((v->getHitbox()->y + (v->getHitbox()->h)) >= (rectangle.y- rectangle.h)
 						&& (v->getHitbox()->y + (v->getHitbox()->h) <= (rectangle.y+6)))) {
-						
 							//jumping = false, asending is true. This floats the character on its current hight by turning of gravity. 
 							v->setIsJumping(false, true);							
 					}else {
@@ -49,8 +41,7 @@ namespace engine {
 			}
 		}
 		//Destroy objects that goes out of window
-		if (rectangle.x < 0 - 32 && alive) {
-			alive = false;
+		if (rectangle.x < 0 - 32) {
 			game.toRemoveComponents.push_back(this);
 		}
 	}

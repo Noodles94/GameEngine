@@ -16,13 +16,12 @@ namespace engine {
 		void moveCharacter(int x, int y);
 		void setIsJumping(bool jumping, bool ascending);
 	private:
-	
 		SDL_Rect hitbox;
 		MainCharacter(int x, int y, int w, int h, const char* pathToImage, int hitboxX, int hitboxY);
 		// set speed of animation
 		bool isJumping = false;
 		int startPosY = rectangle.y;
-		bool asending = false;
+		bool isAscending = false;
 	};
 }
 #endif

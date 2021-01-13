@@ -6,9 +6,7 @@
 namespace engine {
 	class GameLoop
 	{
-	public:
-		//Constructor
-		GameLoop();
+	public:   
 		//Destructor
 		~GameLoop();
 		//GameLoop
@@ -24,7 +22,7 @@ namespace engine {
 		std::vector<Component*> toRemoveComponents;
 
 	private:
-		int minDistanceBeetweenObjects = 80;
+		const int minDistanceBeetweenObjects = 80;
 		int obstacleCreationCurrentTick = 0;
 		int obstacleCreationSpeed = 160;
 		//Add new components to vector which is used in gameloop
@@ -34,8 +32,6 @@ namespace engine {
 		//add obstacele to game
 		void addObstacles();
 		void removeAllComponents();
-		//add more difficult obstacles
-		void addObstaclesMoreDifficult();
 		//remove old components in the next frame
 		void removeOldComponents();
 	};

@@ -11,7 +11,7 @@ namespace engine {
 		static Background* getInstance(const char* pathToTexture) {
 			return new Background(pathToTexture);
 		}
-		void spacebarEvent(const SDL_Event& event);
+		void spacebarEvent(const SDL_Event& event){}
 		void tick() override;
 		void draw() const;
 	private:

@@ -4,6 +4,7 @@
 #include<vector>
 namespace engine {
 	std::unordered_map<std::string, std::vector<const char*>> Texturepaths::textures;
+	
 	Texturepaths::Texturepaths() {
 		std::vector <const char*>obstacles;
 		std::vector <const char*>characters;
@@ -14,7 +15,16 @@ namespace engine {
 			std::make_pair("Background", background)
 		};
 	}
-//	Texturepaths::~Texturepaths() {
-//		delete an_instance;
-//	}
+
+	Texturepaths::~Texturepaths() {
+		textures.erase("Obstacle");
+		textures.erase("Background");
+		textures.erase("Characters");
+	}
+
+	void Texturepaths::addTexture(std::string type, const char* texturePath) {
+		std::vector<const char*> values = textures[type];
+		values.push_back(texturePath);
+		textures[type] = values;
+	};
 }

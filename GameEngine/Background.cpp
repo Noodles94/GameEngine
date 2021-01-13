@@ -9,13 +9,10 @@ namespace engine {
 	}
 
 	void Background::draw() const {
-		//full window
+		//Copy texture over entire screen
 		SDL_RenderCopy(system.getMainRenderer(), texture, NULL, NULL);
 	}
-	//does nothing for backgroud
-	void Background::spacebarEvent(const SDL_Event& event)
-	{
-	}
+
 	void Background::tick() {
 		int i = currentAnimationTick / animationSpeed;
 		//sets new texture
