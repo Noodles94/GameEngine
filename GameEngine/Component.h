@@ -12,7 +12,7 @@ namespace engine {
 		virtual void draw() const;
 		virtual void tick()= 0; 
 		const SDL_Rect* getRect();
-		~Component();
+		virtual ~Component();
 		void setAnimationSpeed(int speed);
 		void setAnimationList(const char* texturePaths[], int numAnimations);
 	protected:
