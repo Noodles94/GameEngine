@@ -15,6 +15,8 @@ namespace engine {
 		static Texturepaths* getInstance() {return an_instance = (an_instance != nullptr) ? an_instance : new Texturepaths();}
 		static void addTexture(std::string type, const char* texturePath);
 		static  std::vector<const char*>getTexture(std::string key) {return textures[key];};
+		Texturepaths(const Texturepaths& c) = delete;
+		const Texturepaths& operator= (const Texturepaths& t) = delete;
 	};
 }
 #endif

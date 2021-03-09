@@ -7,6 +7,7 @@ namespace engine {
 	MainCharacter::MainCharacter(int x, int y, int w, int h, const char * pathToImg, int hitboxX, int hitboxY)
 		:Component(x, y, w, h, pathToImg)
 	{
+
 		hitbox.w = hitboxX;
 		hitbox.h = hitboxY;
 		hitbox.x = x;
@@ -58,6 +59,7 @@ namespace engine {
 		isAscending = ascending;
 		isJumping = jumping;
 	}
+
 	
 	void MainCharacter::spacebarEvent(const SDL_Event& event) {
 		if (!isJumping) {

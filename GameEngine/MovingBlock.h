@@ -14,6 +14,9 @@ namespace engine {
 		void tick()override;
 	private:
 		MovingBlock( const char* pathToImage, int blockHeight);
+		MovingBlock(const MovingBlock& c) = delete;
+		const MovingBlock& operator= (const MovingBlock& t) = delete;
+
 	};
 }
 #endif

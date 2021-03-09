@@ -37,5 +37,6 @@ int main(int argc, char* argv[]) {
 	game.addComponent(mb);
 	game.addComponent(t);
 	game.loop(); 
+	game.~GameLoop();
 	return 0;
 }	

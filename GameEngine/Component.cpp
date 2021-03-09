@@ -21,7 +21,8 @@ namespace engine {
 	}
 
 	Component::~Component() {
-		SDL_DestroyTexture(texture);
+		if(texture != nullptr)
+			SDL_DestroyTexture(texture);
 		for (auto i : animationList) {
 			SDL_DestroyTexture(i);
 		}

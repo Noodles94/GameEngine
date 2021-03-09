@@ -23,6 +23,9 @@ namespace engine {
 		int animationSpeed = 40;//default animation speed
 		int currentAnimationTick = 0;
 		std::vector<SDL_Texture*> animationList;
+	private:
+		Component(const Component& c) = delete;
+		const Component& operator = (const Component& t) = delete;
 	};
 }
 

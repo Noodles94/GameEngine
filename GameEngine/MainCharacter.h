@@ -22,6 +22,8 @@ namespace engine {
 		bool isJumping = false;
 		int startPosY = rectangle.y;
 		bool isAscending = false;
+		MainCharacter(const MainCharacter& c) = delete;
+		const MainCharacter& operator= (const MainCharacter& t) = delete;
 	};
 }
 #endif

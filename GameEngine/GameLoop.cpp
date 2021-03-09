@@ -12,18 +12,22 @@ namespace engine {
 		for (int i = 0; i < currentComponents.size(); ++i) {
 			delete currentComponents[i];
 		}
+
 		for (int i = 0; i < toRemoveComponents.size(); ++i) {
 			delete toRemoveComponents[i];
 		}
 		for (int i = 0; i < toAddComponents.size(); ++i) {
 			delete toAddComponents[i];
 		}
+		toRemoveComponents.clear();
+		toAddComponents.clear();
+		currentComponents.clear();
 	}
 
 	void GameLoop::addComponent(Component* component) {
 		currentComponents.push_back(component);
 	}
-	
+
 	void GameLoop::loop() {
 		const int tickInterval = 1000 / FPS;
 		Uint32 nextTick;
@@ -63,8 +67,8 @@ namespace engine {
 			if (delay > 0)
 				SDL_Delay(delay);
 		}
-		removeAllComponents();
-		std::cout << "Your score: "<< points;
+ 		removeAllComponents();
+		std::cout << "Your score: " << points;
 	}
 
 	void GameLoop::addNewComponents() {
@@ -95,14 +99,14 @@ namespace engine {
 	}
 
 	void GameLoop::addObstacles() {
-		if (obstacleCreationCurrentTick >=(obstacleCreationSpeed -1)){
+		if (obstacleCreationCurrentTick >= (obstacleCreationSpeed - 1)) {
 			std::vector <const char*>obstacleList = Texturepaths::getTexture("Obstacle");
-			
+
 			obstacleCreationCurrentTick = 0;
-			MovingBlock* temp = MovingBlock::getInstance(obstacleList[rand() % obstacleList.size()],497  - rand() % 70);
+			MovingBlock* temp = MovingBlock::getInstance(obstacleList[rand() % obstacleList.size()], 497 - rand() % 70);
 			game.toAddComponents.push_back(temp);
 			// makes obstacles create faster and faster until maxspeed
-			if(obstacleCreationSpeed> minDistanceBeetweenObjects)
+			if (obstacleCreationSpeed > minDistanceBeetweenObjects)
 				obstacleCreationSpeed -= 1;
 		}
 		else {
@@ -111,9 +115,18 @@ namespace engine {
 	}
 
 	void GameLoop::removeAllComponents() {
-		for(int i = 0; i< currentComponents.size(); i++){
+		for (int i = 0; i < currentComponents.size(); ++i) {
 			delete currentComponents[i];
 		}
+
+		for (int i = 0; i < toRemoveComponents.size(); ++i) {
+			delete toRemoveComponents[i];
+		}
+		for (int i = 0; i < toAddComponents.size(); ++i) {
+			delete toAddComponents[i];
+		}
+		toRemoveComponents.clear();
+		toAddComponents.clear();
 		currentComponents.clear();
 	}
 }

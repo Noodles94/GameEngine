@@ -12,6 +12,8 @@ namespace engine {
 	private:
 		SDL_Window* gameWindow;
 		SDL_Renderer* mainRenderer;
+		System(const System& c) = delete;
+		const System& operator= (const System& t) = delete;
 	};
 	extern System system;
 }
